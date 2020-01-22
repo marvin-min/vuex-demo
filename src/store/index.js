@@ -24,6 +24,15 @@ const store = new Vuex.Store({
       console.log(obj);
     }
   },
+  getters: {
+    filterState(state) {
+      if (state.count > 100) {
+        return state.count / 1000 + "k";
+      } else {
+        return state.count;
+      }
+    }
+  },
   modules: {}
 });
 export default store;
